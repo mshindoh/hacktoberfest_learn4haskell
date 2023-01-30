@@ -49,7 +49,7 @@ In this module, we enable the "InstanceSigs" feature that allows writing type
 signatures in places where you can't by default. We believe it's helpful to
 provide more top-level type signatures, especially when learning Haskell.
 -}
-{-# LANGUAGE InstanceSigs #-}
+{- # LANGUAGE InstanceSigs # -}
 
 module Chapter3 where
 
@@ -344,6 +344,12 @@ of a book, but you are not limited only by the book properties we described.
 Create your own book type of your dreams!
 -}
 
+-- data Book = MkBook String String Int
+data Book = MkBook
+  {title :: String
+  , author :: String
+  , pages :: Int} deriving (Show)
+
 {- |
 =⚔️= Task 2
 
@@ -461,6 +467,7 @@ and provide more flexibility when working with data types.
 Create a simple enumeration for the meal types (e.g. breakfast). The one who
 comes up with the most number of names wins the challenge. Use your creativity!
 -}
+data Meal = Breakfast | Lunch | Dinner
 
 {- |
 =⚔️= Task 4
